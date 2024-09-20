@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shoe Shopping Cart</title>
+
+    <link rel="stylesheet" href="./test3.css">
+    <link rel = "Shortcut Icon" href="./ji/profile-5.jpg">
+    
+  </head>
+  <body>
+ 
+    <video id="bg-video" autoplay muted loop>
+      <source src="./vediio/conductground.mp4" type="video/mp4">
+    </video>
+   
+    <div class="container">
+      
+      <div class="form">
+        <form>
+     
+      
+          <h1 style="background-color: black;"><a href="/hw/index.html" title="返回主页面"><img src="./ji/logoo.png"></a></h1>
+          <h2>订单详细信息</h2>
+
+          <label for="name">名字</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="address">地址</label>
+          <textarea id="address" name="address" required></textarea>
+
+          <label for="email">电子邮箱</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="phone">电话</label>
+          <input type="tel" id="phone" name="phone" required>
+
+          <h2>付款资料</h2>
+
+          <label for="card">卡号</label>
+          <input type="text" id="card" name="card" required>
+
+          <label for="expiry">终止日期</label>
+          <input type="text" id="expiry" name="expiry" placeholder="MM / YY" required>
+
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" name="cvv" required>
+
+          <button type="submit" class="submit-btn">发送命令</button>
+        </form>
+      </div>
+
+      <div class="cart">
+        <header>
+          <h1>你的购物车<span class="iconfont fgo">&#xe682;</span></h1>
+          
+        </header>
+
+        <main>
+          <div class="product">
+            <img src="./ji/82e0a18c-8da5-41f5-ab5b-7ba9f4450d0c.webp">
+            <div class="sss">
+              <h2>Nike Dunk Low</h2>
+            </div>
+            
+            <p class="description">Nike Dunk Low 男子运动鞋，为你的造型增添复古
+              篮球范儿。 这款 80 年代经典鞋款起初专为硬木球场打造，随后逐渐风靡街头，
+              此次采用耐穿皮革材质和喷绘风格耐克勾标志，
+              以焕新面貌重回视线。 采用加垫低帮鞋口，彰显复古风范，令你畅享舒适运动体验。</p>
+            <div class="price">¥799</div>
+            <div class="buttons">
+              <button class="remove">删除</button>
+              <button class="quantity negative">-</button>
+              <div class="quantity-value">1</div>
+              <button class="quantity positive">+</button>
+            </div>
+
+          </div>
+
+          <div class="product">
+            
+            <img src="./ji/49be1100-a82f-4d4a-bfce-56149bb3af05.webp">
+            <div class="sss">
+              <h2>Nike Air Zoom G.T. Cut 2 EP</h2>
+              
+            </div>
+            <p class="description">疾速与敏捷是当今赛场的制胜利器，
+              而缓慢表现将让你远远落后，与胜利无缘。Nike Air Zoom G.T. Cut 2 EP 
+              男子篮球鞋采用近地感设计，专为户外球场打造，有助在转向时减少触地情况，
+              助你实现准确助攻，速回空旷的三秒区。
+              上脚此鞋款，助你创造运球空间，制胜出击，并在比赛中保持活力。</p>
+            <div class="price">¥1399</div>
+            <div class="buttons">
+              <button class="remove">删除</button>
+              <button class="quantity negative">-</button>
+              <div class="quantity-value">1</div>
+              <button class="quantity positive">+</button>
+            </div>
+        
+            
+          </div>
+
+          <div class="total-price">
+            总价: <span id="total">¥2198</span>
+          </div>
+          
+          <button class="checkout">进行结算</button>
+          
+          
+        </main>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2022 Shoe Shopping Cart CPL</p>
+    </footer>
+  </body>
+  <script src="./mainfunction.js"></script>
+</html>

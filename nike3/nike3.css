@@ -1,0 +1,129 @@
+/* 定义一个名为 "contant" 的样式，用于设置页面内容区的背景颜色、内边距 */
+.contant{
+    width:100%; /* 设置宽度为页面宽度 */
+    background-color: #120f0f; /* 设置背景颜色为 #120f0f，即深灰色 */
+    padding: 4px 0 12px; /* 设置内边距为 4px 上，0px 左右，12px 下 */
+}
+
+/* 定义一个名为 "tital" 的样式，用于设置页面标题的样式，包括左对齐、字体大小、字重、颜色和行高等 */
+.tital{
+    background: black;
+    height: 100px;
+    /* text-align:left; /* 设置标题文本左对齐 */
+    font-size:100px; /* 设置字体大小为 100px */
+    font-weight:200; /* 设置字重为 200 */
+    color:#333; /* 设置字体颜色为 #333，即深灰色 */
+    line-height: 58px; /* 设置行高为 58px */
+} */
+
+/* 定义一个名为 "shoes-box" 的样式，用于设置商品展示区块的样式，包括宽度、高度和背景颜色等 */
+.shoes-box{
+    width: 100%; /* 设置宽度为页面宽度 */
+    height: 3588px; /* 设置高度为 3588px */
+    background-color: #120f0f; /* 设置背景颜色为 #120f0f，即深灰色 */
+}
+/* 定义一个名为 "shoes-box-left" 的样式，用于设置商品展示区块左侧的样式，包括左浮动、宽度、高度、背景渐变色和过渡效果等 */
+.shoes-box-left{
+    float: left; /* 设置左浮动，使块级元素靠页面左侧排列 */
+    width:688px; /* 设置宽度为 688px */
+    height: 3588px; /* 设置高度为 3588px */
+    background: linear-gradient(to bottom, #6887bd, #d49ab5); /* 设置背景渐变色，从 #6887bd 到 #d49ab5 */
+    transition: all .5s linear; /* 设置过渡效果为所有属性改变消耗 0.5 秒 */
+    -webkit-transition: all .5s linear; /* 为 Webkit 内核浏览器单独设置过渡效果 */
+    -moz-transition: all .5s linear; /* 为 Gecko 内核浏览器单独设置过渡效果 */
+    -ms-transition: all .5s linear; /* 为 Trident 内核浏览器单独设置过渡效果 */
+    -o-transition: all .5s linear; /* 为 Presto 内核浏览器单独设置过渡效果 */
+}
+
+/* 定义一个名为 "shoes-box-right" 的样式，用于设置商品展示区块右侧的样式，包括右浮动、宽度、高度、背景渐变色和过渡效果等 */
+.shoes-box-right{
+    float: right; /* 设置右浮动，使块级元素靠页面右侧排列 */
+    width:688px; /* 设置宽度为 688px */
+    height: 3588px; /* 设置高度为 3588px */
+    background: linear-gradient(to bottom, #6887bd, #d49ab5); /* 设置背景渐变色，从 #6887bd 到 #d49ab5 */
+    transition: all .5s linear; /* 设置过渡效果为所有属性改变消耗 0.5 秒 */
+    -webkit-transition: all .5s linear; /* 为 Webkit 内核浏览器单独设置过渡效果 */
+    -moz-transition: all .5s linear; /* 为 Gecko 内核浏览器单独设置过渡效果 */
+    -ms-transition: all .5s linear; /* 为 Trident 内核浏览器单独设置过渡效果 */
+    -o-transition: all .5s linear; /* 为 Presto 内核浏览器单独设置过渡效果 */
+}
+
+/* 定义一个名为 "items" 的样式，用于设置商品展示区块中商品信息块的样式，包括居中对齐、浮动、宽度、高度、背景色、底部外边距和过渡效果等 */
+.items{
+    text-align:center; /* 设置文本居中对齐 */
+    float: center; /* 设置居中对齐 */
+    width: 628px; /* 设置宽度为 628px */
+    height: 758px; /* 设置高度为 758px */
+    background-color: #fff; /* 设置背景颜色为 #fff，即白色 */
+    margin-bottom: 60px; /* 设置底部外边距为 60px */
+    margin-left: 28px; /* 设置左侧外边距为 28px */
+    transition: all .3s linear; /* 设置过渡效果为所有属性改变消耗 0.3 秒 */
+}
+/* 定义一个名为 "items:hover" 的样式，用于设置当鼠标悬停在商品信息块上时的动效，包括向上位移、缩放、阴影和过渡效果等 */
+.items:hover{
+    transform:translateY(-2px); /* 向上位移 2px，形成向上浮动效果 */
+    transform: scale(1.02); /* 整体缩放 1.02 倍 */
+    box-shadow: 0 60px 90px rgba(184, 227, 151, 0.1); /* 添加阴影效果，颜色为 rgba(184, 227, 151, 0.1)，透明度为 0.1 */
+    -webkit-transform: scale(1.02); /* 为 Webkit 内核浏览器单独设置缩放效果 */
+    -moz-transform: scale(1.02); /* 为 Gecko 内核浏览器单独设置缩放效果 */
+    -ms-transform: scale(1.02); /* 为 Trident 内核浏览器单独设置缩放效果 */
+    -o-transform: scale(1.02); /* 为 Presto 内核浏览器单独设置缩放效果 */
+}        
+
+/* 定义一个名为 "goods-images" 的样式，用于设置商品展示区块中商品图片的样式，包括居中对齐、宽度和上下外边距等 */
+.goods-images{
+    text-align:center; /* 设置文本居中对齐 */
+    width: 628px; /* 设置宽度为 628px */
+    margin: 10px 0 10px; /* 设置上下外边距为 10px，左右外边距为 0 */
+}
+
+/* 定义一个名为 "name" 的样式，用于设置商品展示区块中商品名称的样式，包括居中对齐、浮动、宽度、高度、外边距、字体大小、颜色和文字超出部分省略号代替等 */
+.name{
+    text-align:center; /* 设置文本居中对齐 */
+    float:center; /* 设置居中对齐 */
+    width: 214px; /* 设置宽度为 214px */
+    height: 30px; /* 设置高度为 30px */
+    margin: 2px auto 2px; /* 设置外边距为 2px 上下，auto 左右 */
+    font-size:28px; /* 设置字体大小为 28px */
+    color: #333; /* 设置字体颜色为 #333，即深灰色 */
+    white-space: nowrap; /* 设置禁止换行 */
+    overflow: hidden; /* 设置超出部分隐藏 */
+    text-overflow: ellipsis; /* 将超出部分用省略号代替 */
+}
+
+/* 定义一个名为 "desc" 的样式，用于设置商品展示区块中商品描述的样式，包括居中对齐、宽度、高度、外边距、字体大小、颜色和文字超出部分省略号代替等 */
+.desc{
+    text-align:center; /* 设置文本居中对齐 */
+    width: 214px; /* 设置宽度为 214px */
+    height: 30px; /* 设置高度为 30px */
+    color: #cfa3a3; /* 设置字体颜色为 #cfa3a3，即淡红色 */
+    font-size: 20px; /* 设置字体大小为 20px */
+    margin: 5px auto 5px; /* 设置外边距为 5px 上下，auto 左右 */
+    white-space: nowrap; /* 设置禁止换行 */
+    overflow: hidden; /* 设置超出部分隐藏 */
+}
+/* 定义一个名为 "price" 的样式，用于设置商品展示区块中商品价格的样式，包括居中对齐、浮动、宽度、高度、外边距、字体大小、颜色和文字超出部分省略号代替等 */
+.price{
+    text-align:center; /* 设置文本居中对齐 */
+    float:center; /* 设置元素居中对齐 */
+    width: 214px; /* 设置宽度为 214px */
+    height: 80px; /* 设置高度为 80px */
+    margin: 0 auto 2px; /* 设置外边距为 0 上，auto 左右，2px 下 */
+    font-size:24px; /* 设置字体大小为 24px */
+    color: #d18383; /* 设置字体颜色为 #d18383，即淡红色 */
+    white-space: nowrap; /* 设置禁止换行 */
+    overflow: hidden; /* 设置超出部分隐藏 */
+    text-overflow: ellipsis; /* 将超出部分用省略号代替 */
+}
+
+/* 定义一个名为 "btn" 的样式，用于设置按钮的样式，包括内边距、颜色、边框半径、背景颜色、文本装饰、文本对齐和鼠标指针等 */
+.btn {
+    display: inline-block; /* 将元素设置为行内块状元素 */
+    padding: 10px 10px; /* 设置内边距为 10px 上下，10px 左右 */
+    color: #fff; /* 设置字体颜色为 #fff，即白色 */
+    border-radius: 50%; /* 设置边框半径为 50%，即圆形 */
+    background-color: #0c1219; /* 设置背景颜色为 #0c1219 */
+    text-decoration: none; /* 取消下划线文本装饰 */
+    text-align: center; /* 设置文本居中对齐 */
+    cursor: pointer; /* 设置鼠标指针为手型 */
+}

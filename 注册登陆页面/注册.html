@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sneakers注册</title>
+</head>
+<link rel="stylesheet" href="注册.css">
+<link rel = "Shortcut Icon" href="/hw/img/profile-5.jpg">
+
+<body>
+
+    <video autoplay muted loop src="./img/3.mp4" class="video1"></video>
+    <div class="top"><img src="./img/sneakers.png" alt=""></div>
+    <div class="img4"></div>
+    <div class="img1"></div>
+    <div class="blurbox"></div>
+    <video autoplay muted loop src="./img/背景视频.mp4" class="video"></video>
+    <div class="main-box">
+        <h3>欢迎注册</h3>
+        <p class="tip">已有账号？<span class="login-btn"><a href="登录.html">立刻登录</a></span> </p>
+        <div class="form">
+
+            <div class="row">
+                <label>手机号</label>
+                <input type="tel" class="inp" maxlength=11 id="mobile" oninput="checkMobile()">
+            </div>
+            <div class="warn" id="mobileTip"></div>
+
+            <div class="row">
+                <label>密码</label>
+                <input type="password" oninput="checkmimaCode()" class="inp" id="mima" style="width:120px">
+            </div>
+            <div class="warn" id="mobileTip"></div>
+            <!-- <div>验证码 <span><input type="tel"></span>获取验证码</div> -->
+            <div class="row">
+                <label>验证码</label>
+                <input type="tel" oninput="checkmimaCode()" class="inp" id="code" maxlength=4 style="width:120px">
+                <div class="code" id="codeMsg" onclick="getCode()">获取验证码</div>
+            </div>
+        </div>
+        <div class="warn" id="mimacodeTip"></div>
+        <div class="sub" id="sub" onclick="regF()">注册</div>
+        <div class="foot">
+            <input type="checkbox" checked>
+            阅读并接受<a href="#">用户注册协议</a>
+        </div>
+    </div>
+    </div>
+
+
+    <script>
+        //oninput="checkCode()这段代码是 HTML 中的一个事件处理函数，当某个输入框的内容发生变化时，会调用 checkCode() 函数。一般用于表单验证或实时交互。
+        //onclick="getCode()这段代码是一个HTML元素的onclick事件，当用户点击该元素时会触发getCode()函数。通常，该函数会用于获取验证码或者执行一些与点击相关的操作。具体实现需要看getCode()函数的具体实现。
+        let flag = false;
+        let sec = 60;
+        //定义一个函数名为checkMobile的函数
+        function checkMobile() {
+            let mobileDom = document.getElementById("mobile");//该代码将返回id为mobile的元素，通过id名称mobile获得元素对象
+            let mobile = mobileD;//vom.valuealue 属性表示该元素当前输入的值，这行代码的作用是将输入框中输入的手机号码赋值给变量 mobile。
+            let mobileTip = document.getElementById("mobileTip");//该代码将返回id为mobileTip元素
+
+            let myReg = /^[1][3,4,5,6,7,8,9][0-9]{9}$/;
+
+
+            /*这段代码是用来验证手机号码格式是否正确的。首先使用正则表达式进行验证，如果手机号码格式不正确，则会将手机号码输入框的边框颜色设置为红色，
+           并且在相应的提示元素上显示错误提示信息；如果手机号码格式正确，则将手机号码输入框的边框颜色恢复为默认颜色，并清空错误提示信息。
+           最后，如果手机号码格式正确，则返回 true。*/
+
+            /*!myReg.test(mobile这是一个 JavaScript 正则表达式，用于验证手机号码格式是否正确。其中，myReg 是一个自定义的正则表达式对象，
+           mobile 是要验证的手机号码。如果手机号码的格式符合 myReg 的定义，则返回 true，否则返回 false。*/
+
+
+            // 判断是否为手机号
+            if (!myReg.test(mobile)) {
+                mobileDom.style.borderColor = "red";//mobileDom 元素的边框颜色为红色，
+                mobileTip.innerText = "手机号格式错误";//设置 mobileTip 元素的文本内容为“手机号输入有误”，
+            } else {
+                mobileDom.style.borderColor = "#E0E0E0";//恢复默认色
+                mobileTip.innerText = "";//清空提示信息。
+                return true;
+            }
+        }
+
+
+        //获取验证码
+        function getCode() {
+            if (flag) {//函数内部先判断一个变量flag是否为真，如果为真则直接返回，否则继续执行。
+                return;
+            }
+            let ifMobile = checkMobile();
+            if (!ifMobile) {//然后调用checkMobile()函数检测当前设备是否为手机号，如果不是则直接返回。
+                return;
+            }
+            let codeMsg = document.getElementById("codeMsg");//获取一个id为"codeMsg"的元素
+            codeMsg.innerText = "60s";//设置 codeMsg 元素的文本内容为“60s”，即把"获取验证码"改为"60s",表示倒计时60秒
+            countF();//最后调用countF()函数开始倒计时
+
+        }
+
+
+
+        //倒计时
+        function countF() {
+            flag = true;
+            sec--;//将sec变量减一
+            let codeMsg = document.getElementById("codeMsg");//获取id为"codeMsg"的元素，并将其innerText设置为sec加上字母"s"
+            codeMsg.innerText = sec + "s";
+            setTimeout(function () {//setTimeout函数用来指定某个函数或某段代码，在多少毫秒之后执行，起一个延迟的作用
+                if (sec == 0) {
+                    codeMsg.innerText = "重新获取";//若sec等于0，则将id为"codeMsg"的元素的innerText设置为"重新获取"
+                    flag = false;//将flag变量设为false
+                    sec = 60;//将sec变量重置为60
+                } else {
+                    countF();//调用自己，递归
+                }
+            }, 1000)//1000是1000毫秒的意思
+        }
+
+
+        /*该函数为一个表单提交前的验证函数，主要功能为检查手机号码和验证码是否输入正确，如果验证码输入正确，则将提交按
+        钮的背景颜色改变并返回true，如果有任何一项输入不正确，则不进行提交并返回undefined。其中具体实现如下*/
+
+        //校验密码和验证码
+        function checkmimaCode() {
+            let ifMobile = checkMobile(); // 检查手机号码是否输入正确
+            if (!ifMobile) { // 如果手机号码输入不正确，则直接返回
+                return;
+            }
+            let codeDom = document.getElementById("code"); // 获取验证码输入框的DOM元素
+            let code = codeDom.value; // 获取验证码输入框的value值
+            let mimaDom = document.getElementById("mima"); // 获取验证码输入框的DOM元素
+            let mima = codeDom.value; // 获取验证码输入框的value值
+            let mimacodeTip = document.getElementById("mimacodeTip"); // 获取验证码提示信息的DOM元素
+            if (!code || !mima) { // 如果验证码输入框的值为空
+                codeDom.style.borderColor = "red"; // 将其边框颜色  
+                mimaDom.style.borderColor = "red"; // 将其边框颜色  
+                mimacodeTip.innerText = "请输入密码或验证码"; // 在其下方显示“请输入验证码”的提示信息
+            } else { // 如果密码验证码输入框的值不为空
+                codeDom.style.borderColor = "#E0E0E0"; // 将其边框颜色恢复为默认颜色、
+                mimaDom.style.borderColor = "#E0E0E0"; // 将其边框颜色恢复为默认颜色
+                mimacodeTip.innerText = ""; // 清空提示信息
+                let sub = document.getElementById("sub"); // 获取提交按钮的DOM元素
+                sub.style.background = "#2E58FF"; // 将提交按钮的背景颜色改变为蓝色
+                return true; // 返回true，表示可以提交表单
+            }
+        }
+
+        //注册
+        function regF() {
+            if (checkMobile() && checkmimaCode()) {
+                alert("恭喜注册成功！");
+            }
+        }
+    </script>
+</body>
+
+</html>

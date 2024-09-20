@@ -1,0 +1,170 @@
+
+
+:root{
+    /* 星评的颜色 */
+    --yellow:#eadf0c;
+    /* 购买框颜色 */
+    --light-yellow:#f7a008;
+    /* 商品名称颜色 */
+    --black:#e6a009;
+    --light-color:#2ce517;
+    /* 边框阴影 */
+    --box-shadow:0 .5rem 3rem rgb(234, 242, 6);
+    /* 边框颜色和大小 */
+    --border:.1rem solid rgb(255, 10, 125);
+}
+
+*{
+    /* 字体 */
+    font-family: 'Poppins', sans-serif;
+    /* 外、内边距 */
+    margin:0; padding:0;
+    /* 定义了所有元素的盒模型属性，使边框和内边距保持在指定的宽度范围内。 */
+    box-sizing: border-box;
+    /* 用来消除默认的外边框线。 */
+    outline: none; border: none;
+    /* 取消下划线 */
+    text-decoration: none;
+    /* 单词首字母大写 */
+    text-transform: capitalize;
+    transition: .2s linear;
+    /* 默认背景颜色 */
+    background-color: rgba(16, 17, 17, 0.767);
+}
+
+html{
+    /* 将默认字体大小，即10px */
+    font-size: 62.5%;
+    /* 隐藏水平滚动条 */
+    overflow-x: hidden;
+    /* 当使用滚动时，在滚动到的元素上方添加额外的像素值，用来留出空间以避免其他定位元素重叠。 */
+    scroll-padding-top: 7rem;
+    /* 平滑滚动效果 */
+    scroll-behavior: smooth;
+}hy
+
+section{
+    /* 内边距上下2左右9 */
+    padding:2rem 9%;
+}
+
+.heading{
+    /* 定义了<h1>元素的样式，使其具有居中对齐、字体大小为4.5rem和红色颜色等特性。 */
+    padding-bottom: 2rem;
+    text-align: center;
+    font-size: 4.5rem;
+    color:red;
+}
+
+.heading span{
+    /* 最底层 */
+    position: relative;
+    z-index: 0;
+}
+
+.heading span::before{
+
+    content: '';
+    position: absolute;
+    /* 设置伪元素下边缘距离其定位父元素的底部为1rem，左边缘距离其定位父元素的左边缘为0。 */
+
+    bottom:1rem; left:0;
+    height: 100%;
+    width: 100%;
+    /* 热销下面黄线 */
+    background:#eac700;
+    /* 放在最底层 */
+    z-index: -1;
+    /* 多边形剪裁 */
+    clip-path: polygon(0 90%, 100% 80%, 100% 100%, 0% 100%);
+}
+
+.btn{
+    /* 显示方式为行内块 */
+    display: inline-block;
+    /* 按钮上边距 */
+    margin-top: 1rem;
+    /* 按钮内边距 */
+    padding:.8rem 3rem;
+    /* 按钮颜色 */
+    background:var(--light-yellow);
+    /* 字体颜色 */
+    color:#ec1414;
+    /* 手型变成指向的***** */
+    cursor: pointer;
+    /* 字体大小 */
+    font-size: 1.7rem;
+    /* 圆角半径 */
+    border-radius: .5rem;
+    /* 粗细 */
+    font-weight: 500;
+    /* 水平居中 */
+    text-align: center;
+}
+/* 鼠标指到购买时变为黄色背景 */
+.btn:hover{
+    background:var(--yellow);
+}
+
+/* 盒子内容大小 */
+.featured .featured-slider{
+    padding:1rem;
+    padding-bottom: 4rem;
+    
+}
+
+.featured .featured-slider .box{
+    padding:2rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    border:var(--border);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+}
+/* 图片高度 */
+.featured .featured-slider .box img{
+    height: 15rem;
+    color:#eeeeee;
+}
+
+.featured .featured-slider .box:hover img{
+    transform: scale(.9);
+}
+/* 名称颜色 */
+.featured .featured-slider .box .content h3{
+    font-size: 2.2rem;
+    color:var(--black);
+}
+/* 星星大小 */
+.featured .featured-slider .box .content .stars{
+    padding:1rem 0;
+}
+/* 五星颜色 */
+.featured .featured-slider .box .content .stars i{
+    font-size: 1.7rem;
+    color:var(--yellow);
+}
+/* 价格字体颜色 */
+.featured .featured-slider .box .content .price{
+    font-size: 2.5rem;
+    color:aqua;
+}
+
+
+
+
+/* 这段代码定义了在特色产品展示区域中每个产品展示块的样式。以下是每行代码的解释：
+
+- `.featured .featured-slider .box{...}`：选择在`.featured-slider`类下的所有子元素，即特色产品展示区域每个产品块的样式。
+  - `padding:2rem;`：设置产品块内边距为2个ems。
+  - `text-align: center;`：设置产品区块内文本的居中对齐。
+  - `box-shadow: var(--box-shadow);`：使用CSS变量“--box-shadow”的值，设置产品块的阴影效果。
+  - `border:var(--border);`：使用CSS变量“--border”的值，设置产品块的边框类型。
+  - `border-radius: .5rem;`：设置产品块的圆角半径为0.5个ems(即12.5像素)
+  - `-webkit-border-radius: .5rem;`：为了兼容某些版本的谷歌浏览器,设置产品块的圆角半径为0.5个ems。
+  - `-moz-border-radius: .5rem;`：为了兼容某些版本的火狐浏览器,设置产品块的圆角半径为0.5个ems。
+  - `-ms-border-radius: .5rem;`：为了兼容某些版本的Edge浏览器,设置产品块的圆角半径为0.5个ems。 */
+  /* - `-o-border-radius: .5rem;`：为了兼容某些版本的Opera浏览器,设置产品块的圆角半径为0.5个ems。 */

@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.sneakers{
+    background: black;
+}
+.title {
+    text-align: center;
+    color: rgb(255, 64, 0);
+    height: 50px;
+}
+
+.div {
+    float: left;
+    width: 100%;
+    line-height: 25px;
+    font-family: '微软雅黑';
+    overflow: hidden;
+    /* background-color: skyblue; */
+}
+
+img {
+    width: 420px;
+}
+
+.box img {
+    transition: all 0.4s;
+}
+
+div img:hover {
+    transform: scale(1.05);
+}
+
+.money {
+    color: rgb(214, 30, 33);
+}
+
+.box1 {
+    /* width: 420px;
+    height: 480px; */
+    float: left;
+    color: black;
+    max-width: 100%;
+    margin-left: 20px;
+    /* background-size: 100% 100%; */
+
+}
+
+.box2 {
+    float: left;
+    color: black;
+    max-width: 100%;
+    margin-left: 20px;
+}
+
+.box3 {
+    float: left;
+    color: black;
+    max-width: 100%;
+    margin-left: 20px;
+}
+
+.box4 {
+    float: left;
+    color: black;
+    max-width: 100%;
+    margin-left: 20px;
+}
+
+.box5 {
+    float: left;
+    color: black;
+    max-width: 100%;
+    margin-left: 20px;
+}
+
+.box6 {
+    float: left;
+    color: black;
+    max-width: 100%;
+    margin-left: 20px;
+}
+
+.box7 {
+    float: left;
+    color: black;
+    max-width: 100%;
+    margin-left: 20px;
+}
+
+.box8 {
+    float: left;
+    color: black;
+    max-width: 100%;
+    margin-left: 20px;
+}
+
+.box9 {
+    float: left;
+    color: black;
+    max-width: 100%;
+    margin-left: 20px;
+}
+
+
+.tatle2 {
+    float: left;
+    width: 100px;
+    padding: 40px;
+    color: rgba(255, 13, 0, 0.934);
+}
+
+.box10 {
+    width: 722px;
+    height: 358px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.box10_1 {
+    margin: 75px;
+    width: 3200px;
+    height: 352px;
+    animation: move 45s infinite alternate;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+
+    15% {
+        transform: translateX(-440px);
+    }
+
+    30% {
+        transform: translateX(-880px);
+    }
+
+    45% {
+        transform: translateX(-1320px);
+    }
+
+    60% {
+        transform: translateX(-1760px);
+    }
+
+    100% {
+        transform: translateX(-2200px);
+    }
+}
+
+.box10_1 img {
+    float: left;
+    height: 352px;
+}
+
+
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 10px;
+    color: #fff;
+    border-radius: 50%;
+    background-color: #0c1219;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+  }
+  

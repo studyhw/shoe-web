@@ -1,0 +1,1212 @@
+html {
+  scroll-behavior: smooth;
+}  /* 设置页面滚动时的平滑滚动效果。 */
+
+body {
+  font-family: "Lato", sans-serif;
+  padding: 0;
+  margin: 0;
+ }   /* 设置整个页面的字体和无边距、无内边距。 */
+
+nav {
+  background-color: #111;
+  color: white;
+  padding: 20px 50px;
+  /* 设置导航栏的样式，包括背景颜色、文字颜色、顶部和左右内边距。 */
+}         
+
+.navTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* 设置导航栏顶部居中对齐和左右两端对齐的“flex”布局。 */
+}
+.navTop .button1{
+  background-color: #111;
+}
+
+.navTop .button1 .more{
+  color: white;
+  
+} 
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: gray;
+  padding: 10px 20px;
+  border-radius: 10px;
+  /* 设置搜索框的样式，包括背景颜色、内边距、圆角和“flex”布局等。 */
+}
+
+.searchInput {
+  border: none;
+  background-color: transparent;
+  /* 设置搜索框的输入框样式，包括去掉边框和设置透明背景等。 */
+}
+
+.searchInput::placeholder {
+  color: lightgray;
+}
+
+.more {
+  font-size: 20px;
+  border-bottom: 2px solid green;
+  cursor: pointer;
+  /* 设置导航栏中文字的样式，包括字体大小、下划线和鼠标指针样式等。 */
+}
+
+.navBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 定义底部的导航栏样式，采用了“flex”布局方式，垂直居中对齐 */
+}
+
+.menuItem {
+  margin-right: 50px;
+  cursor: pointer;
+  color: lightgray;
+  font-weight: 400;
+  /* 定义底部导航栏中的菜单项的样式，包括右侧外边距、鼠标指针样式、文字颜色等。该类样式在该网页中可能用于定义导航链接的样式。 */
+}
+
+.slider {
+background: url("./img/photo-1604147495798-57beb5d6af73.jpg");  /* 定义了滑动轮播图容器的样式，背景图片 */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%); /*裁剪路径  并不是所有的浏览器都兼容*/
+  overflow: hidden;  /* ，溢出隐藏。 */
+}
+
+.sliderWrapper {
+  display: flex;
+  width: 500vw;
+  transition: all 1.5s ease-in-out;
+  /* all 表示所有 CSS 属性都应用过渡效果； */
+/* 1.5s 表示过渡效果的持续时间为 1.5 秒； */
+/* ease-in-out 表示过渡效果的速度变化函数为缓进缓出，即在过渡开始和结束时速度逐渐变缓。 */
+}
+
+/* 轮播图项的样式 */
+.sliderItem {
+  width: 100vw;                  /* 宽度为整个视窗 viewport width */
+  display: flex;                 /* 使用 Flex 布局 */
+  align-items: center;           /* 竖直方向居中 */
+  justify-content: center;       /* 水平方向居中 */
+  position: relative;            /* 相对定位 */
+}
+
+/* 轮播图背景的样式 */
+.sliderBg {
+  width: 750px;                  /* 宽度为 750 像素 */
+  height: 750px;                 /* 高度为 750 像素 */
+  border-radius: 50%;            /* 圆角半径为 50% 使其变成圆形 */
+  position: absolute;            /* 绝对定位 */
+}
+
+/* 轮播图图片的样式 */
+.sliderImg {
+  z-index: 1;                    /* 层级为 1 */
+}
+
+/* 轮播图标题的样式 */
+.sliderTitle {
+  position: absolute;            /* 绝对定位 */
+  top: 10%;                      /* 距离顶部 10% */
+  right: 10%;                    /* 距离右边 10% */
+  font-size: 60px;               /* 字体大小为 60 像素 */
+  font-weight: 900;              /* 字体粗细为 900 */
+  text-align: center;            /* 居中对齐 */
+  color: white;                  /* 颜色为白色 */
+  z-index: 1;                    /* 层级为 1 */
+}
+
+/* 产品价格的样式 */
+.sliderPrice {
+  position: absolute;           /* 绝对定位 */
+  top: 10%;                     /* 距离顶部 10% */
+  left: 10%;                    /* 距离左边 10% */
+  font-size: 60px;              /* 字体大小为 60 像素 */
+  font-weight: 300;             /* 字体粗细为 300 */
+  text-align: center;           /* 居中对齐 */
+  color: white;                 /* 颜色为白色 */
+  border: 1px solid gray;       /* 边框 1 像素灰色边框 */
+  z-index: 1;                   /* 层级为 1 */
+}
+
+/* 购买按钮的样式 */
+.buyButton {
+  position: absolute;           /* 绝对定位 */
+  top: 50%;                     /* 距离顶部 50% */
+  right: 10%;                   /* 距离右边 10% */
+  font-size: 30px;              /* 字体大小为 30 像素 */
+  font-weight: 900;             /* 字体粗细为 900 */
+  color: white;                 /* 颜色为白色 */
+  border: 1px solid gray;       /* 边框 1 像素灰色边框 */
+  background-color: black;      /* 背景色为黑色 */
+  z-index: 1;                   /* 层级为 1 */
+  cursor: pointer;              /* 鼠标悬停时显示手形游标 */
+}
+
+/* 鼠标悬停时按钮的样式 */
+.buyButton:hover {
+  background-color: white;      /* 鼠标悬停时背景色变为白色 */
+  color: black;                 /* 鼠标悬停时字体颜色变为黑色 */
+}
+
+
+
+/* 第1个轮播项背景样式 */
+.sliderItem:nth-child(1) .sliderBg {
+  background-color: #369e62;     /* 背景色为绿色 */
+}
+
+/* 第2个轮播项背景样式 */
+.sliderItem:nth-child(2) .sliderBg {
+  background-color: rebeccapurple;  /* 背景色为紫色 */
+}
+
+/* 第3个轮播项背景样式 */
+.sliderItem:nth-child(3) .sliderBg {
+  background-color: teal;        /* 背景色为青色 */
+}
+
+/* 第4个轮播项背景样式 */
+.sliderItem:nth-child(4) .sliderBg {
+  background-color: cornflowerblue;  /* 背景色为蓝色 */
+}
+
+/* 第5个轮播项背景样式 */
+.sliderItem:nth-child(5) .sliderBg {
+  background-color: rgb(124, 115, 80);  /* 背景色为棕色 */
+}
+
+/* 第1个轮播项价格样式 */
+.sliderItem:nth-child(1) .sliderPrice {
+  color: #369e62;                /* 字体颜色为绿色 */
+}
+
+/* 第2个轮播项价格样式 */
+.sliderItem:nth-child(2) .sliderPrice {
+  color: white;                  /* 字体颜色为白色 */
+}
+
+/* 第3个轮播项价格样式 */
+.sliderItem:nth-child(3) .sliderPrice {
+  color: teal;                   /* 字体颜色为青色 */
+}
+
+/* 第4个轮播项价格样式 */
+.sliderItem:nth-child(4) .sliderPrice {
+  color: cornflowerblue;         /* 字体颜色为蓝色 */
+}
+
+/* 第5个轮播项价格样式 */
+.sliderItem:nth-child(5) .sliderPrice {
+  color: cornsilk;               /* 字体颜色为玉米色 */
+}
+
+
+/* 特性列表容器样式 */
+.features {
+  display: flex;                      /* 使用 Flex 布局 */
+  align-items: center;                /* 竖直方向居中对齐 */
+  justify-content: space-between;     /* 水平方向等分 */
+  padding: 50px;                      /* 内间距 50 像素 */
+}
+
+/* 特性列表项样式 */
+.feature {
+  display: flex;                      /* 使用 Flex 布局 */
+  flex-direction: column;             /* 竖直方向排列 */
+  align-items: center;                /* 竖直方向居中对齐 */
+  text-align: center;                 /* 文本居中 */
+}
+
+/* 特性图标样式 */
+.featureIcon {
+  width: 50px;                        /* 宽度为 50 像素 */
+  height: 50px;                       /* 高度为 50 像素 */
+}
+
+/* 特性标题样式 */
+.featureTitle {
+  font-size: 20px;                    /* 字体大小为 20 像素 */
+  font-weight: 600;                   /* 字体粗细为 600 */
+  margin: 20px;                       /* 上下边距 20 像素 */
+}
+
+/* 特性描述样式 */
+.featureDesc {
+  color: gray;                        /* 字体颜色为灰色 */
+  width: 50%;                         /* 宽度为父元素的一半 */
+  height: 100px;                      /* 高度为 100 像素 */
+}
+
+/* 产品区块样式 */
+.product {
+  height: 100vh;                      /* 高度为整个视窗高度 viewport height */
+  background-color: whitesmoke;       /* 背景颜色为白烟色 */
+  position: relative;                 /* 相对定位 */
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);   /* 裁剪路径为四边形斜切 */
+}
+
+/* 支付框样式 */
+.payment {
+  width: 500px;                       /* 宽度为 500 像素 */
+  height: 500px;                      /* 高度为 500 像素 */
+  background-color: white;            /* 背景颜色为白色 */
+  position: absolute;                 /* 绝对定位 */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;                            /* 将其置于父元素正中心 */
+  margin: auto;                       /* 垂直和水平居中 */
+  padding: 10px 50px;                 /* 上下 10 像素，左右 50 像素的内边距 */
+  display: none;                      /* 初始状态不显示 */
+  flex-direction: column;             /* 竖直方向排列 */
+  -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);  /* 设置阴影 */
+  box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);          /* 设置阴影 */
+}
+
+/* 标题样式 */
+.payTitle {
+  font-size: 20px; /* 字体大小为20px */
+  color: lightgray; /* 字体颜色为淡灰色 */
+}
+
+/* 表单标签样式 */
+label {
+  font-size: 14px; /* 字体大小为14px */
+  font-weight: 300; /* 字体粗细为300 */
+}
+
+/* 输入框样式 */
+.payInput {
+  padding: 10px; /* 内边距10px */
+  margin: 10px 0px; /* 外边距上下为10px，左右为0 */
+  border: none; /* 边框为无 */
+  border-bottom: 1px solid gray; /* 下边框为灰色1px实线 */
+}
+
+/* 输入框占位符样式 */
+.payInput::placeholder {
+  color: rgb(163, 163, 163); /* 占位符颜色为灰色 */
+}
+
+/* 卡片图标样式 */
+.cardIcons {
+  display: flex; /* 使用Flex布局 */
+}
+
+/* 卡片图标样式 */
+.cardIcon {
+  margin-right: 10px; /* 右外边距为10px */
+}
+
+/* 卡片信息样式 */
+.cardInfo {
+  display: flex; /* 使用Flex布局 */
+  justify-content: space-between; /* 元素之间的距离均分 */
+}
+
+/* 卡片小样式 */
+.sm {
+  width: 30%; /* 宽度为30% */
+}
+
+/* 支付按钮样式 */
+.payButton {
+  position: absolute; /* 绝对定位 */
+  height: 40px; /* 高度为40px */
+  bottom: -40; /* 负向下外边距40px */
+  width: 100%; /* 宽度为100% */
+  left: 0; /* 左侧对齐 */
+  -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3); /* 设置Webkit内核浏览器的阴影效果 */
+  box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3); /* 设置其他浏览器的阴影效果 */
+  background-color: #369e62; /* 背景颜色为绿色 */
+  color: white; /* 文字颜色为白色 */
+  border: none; /* 边框为无 */
+  cursor: pointer; /* 鼠标样式为手型 */
+}
+
+
+/* 关闭按钮样式 */
+.close {
+  width: 20px; /* 宽度为20px */
+  height: 20px; /* 高度为20px */
+  position: absolute; /* 绝对定位 */
+  background-color: gray; /* 背景颜色为灰色 */
+  color: white; /* 字体颜色为白色 */
+  top: 10px; /* 上外边距为10px */
+  right: 10px; /* 右外边距为10px */
+  display: flex; /* 使用Flex布局 */
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  cursor: pointer; /* 鼠标样式为手型 */
+  padding: 2px; /* 内边距为2px */
+}
+
+/* 商品图片样式 */
+.productImg {
+  width: 50%; /* 宽度为50% */
+}
+
+/* 商品详情样式 */
+.productDetails {
+  position: absolute; /* 绝对定位 */
+  top: 10%; /* 上外边距为10% */
+  right: 0; /* 右对齐 */
+  width: 40%; /* 宽度为40% */
+  padding: 50px; /* 内边距为50px */
+}
+
+/* 商品标题样式 */
+.productTitle {
+  font-size: 75px; /* 字体大小为75px */
+  font-weight: 900; /* 字体粗细为900 */
+}
+
+/* 商品描述样式 */
+.productDesc {
+  font-style: 24px; /* 字体大小为24px */
+  color: gray; /* 字体颜色为灰色 */
+}
+
+/* 颜色和尺码样式 */
+.colors,
+.sizes {
+  display: flex; /* 使用Flex布局 */
+  margin-bottom: 20px; /* 底部外边距为20px */
+}
+
+/* 颜色样式 */
+.color {
+  width: 32px; /* 宽度为32px */
+  height: 32px; /* 高度为32px */
+  border-radius: 5px; /* 圆角半径为5px */
+  background-color: black; /* 背景颜色为黑色 */
+  margin-right: 10px; /* 右外边距为10px */
+  cursor: pointer; /* 鼠标样式为手型 */
+}
+
+/* 最后一个颜色样式 */
+.color:last-child {
+  background-color: cornflowerblue; /* 背景颜色为印第安蓝色 */
+}
+
+/* 尺码样式 */
+.size {
+  padding: 5px 20px; /* 上下内边距为5px，左右内边距为20px */
+  border: 1px solid black; /* 边框为1px黑色实线 */
+  margin-right: 10px; /* 右外边距为10px */
+  cursor: pointer; /* 鼠标样式为手型 */
+  font-size: 20px; /* 字体大小为20px */
+}
+
+/* 媒体容器样式 */
+.media-container {
+  display: flex; /* 使用Flex布局 */
+}
+
+/* 图片容器和视频容器样式 */
+.image-container,
+.video-container {
+  flex-grow: 1; /* 平均占用剩余空间 */
+  padding: 0; /* 内边距为0 */
+}
+
+/* 图片容器中图像样式和视频容器中视频样式 */
+.image-container img,
+.video-container video {
+  width: 100%; /* 宽度100% */
+  height: auto; /* 高度自适应 */
+  max-width: 100%; /* 最大宽度为100% */
+  max-height: 100%; /* 最大高度为100% */
+}
+
+/* 商品按钮样式 */
+.productButton {
+  float: right; /* 右浮动 */
+  padding: 10px 20px; /* 上下内边距为10px，左右内边距为20px */
+  background-color: black; /* 背景颜色为黑色 */
+  color: white; /* 字体颜色为白色 */
+  font-weight: 600; /* 字体粗细为600 */
+  cursor: pointer; /* 鼠标样式为手型 */
+}
+
+
+/* 商品按钮鼠标悬停时样式 */
+.productButton:hover {
+  background-color: white; /* 背景色变为白色 */
+  color: black; /* 字体颜色变为黑色 */
+}
+
+/* 图库样式 */
+.gallery {
+  padding: 50px; /* 内边距为50px */
+  display: flex; /* 使用Flex布局 */
+}
+
+/* 图库项样式 */
+.galleryItem {
+  flex: 1; /* 平均占用剩余空间 */
+  padding: 50px; /* 内边距为50px */
+}
+
+/* 图片样式 */
+.galleryImg {
+  width: 100%; /* 宽度100% */
+}
+
+/* 新季节样式 */
+.newSeason {
+  display: flex; /* 使用Flex布局 */
+}
+
+/* 新季节项样式 */
+.nsItem {
+  flex: 1; /* 平均占用剩余空间 */
+  background-color: black; /* 背景颜色为黑色 */
+  color: white; /* 字体颜色为白色 */
+  display: flex; /* 使用Flex布局 */
+  flex-direction: column; /* 垂直排列 */
+  align-items: center; /* 水平居中 */
+  justify-content: center; /* 垂直居中 */
+  text-align: center; /* 文字居中 */
+}
+
+/* 新季节图片样式 */
+.nsImg {
+  width: 100%; /* 宽度100% */
+  height: 500px; /* 高度为500px */
+}
+
+
+/* 新季节标题样式 */
+.nsTitle {
+  font-size: 40px; /* 字体大小为40px */
+}
+
+/* 新季节按钮样式 */
+.nsButton {
+  padding: 15px; /* 内边距为15px */
+  font-weight: 600; /* 字体粗细为600 */
+  cursor: pointer; /* 鼠标样式为手型 */
+}
+
+/* 页脚样式 */
+footer {
+  display: flex; /* 使用Flex布局 */
+}
+
+/* 页脚左侧样式 */
+.footerLeft {
+  flex: 2; /* 占用2/3的空间 */
+  display: flex; /* 使用Flex布局 */
+  justify-content: space-between; /* 元素均分 */
+  padding: 50px; /* 内边距为50px */
+}
+
+/* 页脚菜单标题样式 */
+.fMenuTitle {
+  font-size: 16px; /* 字体大小为16px */
+}
+
+/* 页脚菜单列表样式 */
+.fList {
+  padding: 0; /* 内边距为0 */
+  list-style: none; /* 列表样式为空 */
+}
+
+/* 页脚菜单列表项样式 */
+.fListItem {
+  margin-bottom: 10px; /* 下外边距为10px */
+  color: gray; /* 字体颜色为灰色 */
+  cursor: pointer; /* 鼠标样式为手型 */
+}
+
+/* 页脚右侧样式 */
+.footerRight {
+  flex: 1; /* 占用1/3的空间 */
+  padding: 50px; /* 内边距为50px */
+  display: flex; /* 使用Flex布局 */
+  flex-direction: column; /* 垂直排列 */
+  justify-content: space-between; /* 元素均分 */
+}
+
+/* 页脚输入框样式 */
+.fInput {
+  padding: 5px; /* 内边距为5px */
+}
+
+/* 页脚按钮样式 */
+.fButton {
+  padding: 5px; /* 内边距为5px */
+  background-color: black; /* 背景颜色为黑色 */
+  color: white; /* 字体颜色为白色 */
+}
+
+/* 页脚图标容器样式 */
+.fIcons{
+  display: flex; /* 使用Flex布局 */
+}
+
+/* 页脚图标样式 */
+.fIcon{
+  width: 20px; /* 宽度为20px */
+  height: 20px; /* 高度为20px */
+  margin-right: 10px; /* 右外边距为10px */
+}
+
+/* 版权信息样式 */
+.copyright{
+  font-weight: 300; /* 字体粗细为300 */
+  font-size: 14px; /* 字体大小为14px */
+}
+
+  @media screen and (max-width:480px) {
+    /* 当屏幕宽度小于等于480px时生效 */
+  
+    /* 导航栏样式 */
+    nav{
+      padding: 20px; /* 内边距为20px */
+    }
+  
+    /* 搜索框样式 */
+    .search{
+      display: none; /* 隐藏 */
+    }
+  
+    /* 导航底部样式 */
+    .navBottom{
+      flex-wrap: wrap; /* 元素折行 */
+    }
+  
+    /* 导航菜单项样式 */
+    .menuItem{
+      margin: 20px; /* 外边距为20px */
+      font-weight: 700; /* 字体粗细为700 */
+      font-size: 20px; /* 字体大小为20px */
+    }
+  
+    /* 轮播图样式 */
+    .slider{
+      clip-path: none; /* 取消裁剪 */
+    }
+  
+    /* 轮播图图片样式 */
+    .sliderImg{
+      width: 90%; /* 宽度为90% */
+    }
+  
+    /* 轮播图背景样式 */
+    .sliderBg{
+      width: 100%; /* 宽度为100% */
+      height: 100%; /* 高度为100% */
+    }
+  
+    /* 轮播图标题样式 */
+    .sliderTitle{
+      display: none; /* 隐藏 */
+    }
+  
+    /* 轮播图价格样式 */
+    .sliderPrice{
+      top: unset; /* 顶部位置为自适应 */
+      bottom: -50; /* 底部位置为-50px */
+      left: 0; /* 左侧位置为0 */
+      background-color: lightgrey; /* 背景颜色为浅灰色 */
+    }
+  
+    /* 购买按钮样式 */
+    .buyButton{
+      right: 0; /* 右侧位置为0 */
+      top: 0; /* 顶部位置为0 */
+    }
+  
+    /* 产品特点样式 */
+    .features{
+      flex-direction: column; /* 垂直排列 */
+    }
+  
+    /* 产品样式 */
+    .product{
+      clip-path: none ; /* 取消裁剪 */
+      display: flex; /* 使用Flex布局 */
+      flex-direction: column; /* 垂直排列 */
+      align-items: center; /* 水平居中 */
+    }
+  
+    /* 产品图片样式 */
+    .productImg{
+      width: 80%; /* 宽度为80% */
+    }
+  
+
+
+  /* 产品详情样式 */
+  .productDetails{
+    width: 100%; /* 宽度为100% */
+    padding: 0; /* 内边距为0 */
+    display: flex; /* 使用Flex布局 */
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 水平居中 */
+    text-align: center; /* 文字居中 */
+    position: relative; /* 位置相对 */
+    top: 0; /* 顶部位置为0 */
+  }
+
+  /* 产品标题样式 */
+  .productTitle{
+    font-size: 50px; /* 字体大小为50px */
+    margin: 0; /* 外边距为0 */
+  }
+
+  /* 图库样式 */
+  .gallery{
+    display: none; /* 隐藏 */
+  }
+
+  /* 新季节样式 */
+  .newSeason{
+    flex-direction: column; /* 垂直排列 */
+  }
+
+  /* 新季节第二个项样式 */
+  .nsItem:nth-child(2){
+    padding: 50px; /* 内边距为50px */
+  }
+
+  /* 页脚样式 */
+  footer{
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 水平居中 */
+  }
+
+  /* 页脚左侧样式 */
+  .footerLeft{
+    padding: 20px; /* 内边距为20px */
+    width: 90%; /* 宽度为90% */
+  }
+
+  /* 页脚右侧样式 */
+  .footerRight{
+    padding: 20px; /* 内边距为20px */
+    width: 90%; /* 宽度为90% */
+    align-items: center; /* 水平居中 */
+    background-color: whitesmoke; /* 背景色为白烟色 */
+  }
+
+  /* 支付信息样式 */
+  .payment{
+    width: 90%; /* 宽度为90% */
+    padding: 20px; /* 内边距为20px */
+  }
+}
+
+
+/* ====================================================THE END============================================== */
+
+
+
+
+
+
+
+/* .sliderPrice {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-size: 60px;
+  font-weight: 300;
+  text-align: center;
+  color: white;
+  border: 1px solid gray;
+  z-index: 1;
+}
+
+.buyButton {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  font-size: 30px;
+  font-weight: 900;
+  color: white;
+  border: 1px solid gray;
+  background-color: black;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.buyButton:hover {
+  background-color: white;
+  color: black;
+} */
+
+/* 
+.sliderItem:nth-child(1) .sliderBg {
+  background-color: #369e62;
+}
+.sliderItem:nth-child(2) .sliderBg {
+  background-color: rebeccapurple;
+}
+.sliderItem:nth-child(3) .sliderBg {
+  background-color: teal;
+}
+.sliderItem:nth-child(4) .sliderBg {
+  background-color: cornflowerblue;
+}
+.sliderItem:nth-child(5) .sliderBg {
+  background-color: rgb(124, 115, 80);
+}
+
+.sliderItem:nth-child(1) .sliderPrice {
+  color: #369e62;
+}
+.sliderItem:nth-child(2) .sliderPrice {
+  color: white;
+}
+.sliderItem:nth-child(3) .sliderPrice {
+  color: teal;
+}
+.sliderItem:nth-child(4) .sliderPrice {
+  color: cornflowerblue;
+}
+.sliderItem:nth-child(5) .sliderPrice {
+  color: cornsilk;
+} */
+
+/* 
+.features {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.featureIcon {
+  width: 50px;
+  height: 50px;
+}
+
+.featureTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px;
+}
+
+.featureDesc {
+  color: gray;
+  width: 50%;
+  height: 100px;
+}
+
+.product {
+  height: 100vh;
+  background-color: whitesmoke;
+  position: relative;
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.payment {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 10px 50px;
+  display: none;
+  flex-direction: column;
+  -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+} */
+
+/* 
+.payTitle {
+  font-size: 20px;
+  color: lightgray;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.payInput {
+  padding: 10px;
+  margin: 10px 0px;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.payInput::placeholder {
+  color: rgb(163, 163, 163);
+}
+
+.cardIcons {
+  display: flex;
+}
+
+.cardIcon {
+  margin-right: 10px;
+}
+
+.cardInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sm {
+  width: 30%;
+}
+
+.payButton {
+  position: absolute;
+  height: 40px;
+  bottom: -40;
+  width: 100%;
+  left: 0;
+  -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+  background-color: #369e62;
+  color: white;
+  border: none;
+  cursor: pointer;
+} */
+
+/* .close {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color: gray;
+  color: white;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.productImg {
+  width: 50%;
+}
+
+.productDetails {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  width: 40%;
+  padding: 50px;
+}
+
+.productTitle {
+  font-size: 75px;
+  font-weight: 900;
+}
+
+.productDesc {
+  font-style: 24px;
+  color: gray;
+}
+
+.colors,
+.sizes {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.color {
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  background-color: black;
+  margin-right: 10px;
+  cursor: pointer;
+} */
+
+/* 
+.color:last-child {
+  background-color: cornflowerblue;
+}
+
+.size {
+  padding: 5px 20px;
+  border: 1px solid black;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+.media-container {
+  display: flex;
+}
+
+.image-container,
+.video-container {
+  flex-grow: 1;
+  padding: 0;
+}
+
+.image-container img,
+.video-container video {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+.productButton {
+  float: right;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+} */
+
+
+
+/* 
+.productButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.gallery {
+  padding: 50px;
+  display: flex;
+}
+
+.galleryItem {
+  flex: 1;
+  padding: 50px;
+}
+
+.galleryImg {
+  width: 100%;
+}
+
+.newSeason {
+  display: flex;
+}
+
+.nsItem {
+  flex: 1;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.nsImg {
+  width: 100%;
+  height: 500px;
+} */
+
+/* 
+.nsTitle {
+  font-size: 40px;
+}
+
+.nsButton {
+  padding: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+}
+
+.footerLeft {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.fMenuTitle {
+  font-size: 16px;
+}
+
+.fList {
+  padding: 0;
+  list-style: none;
+}
+
+.fListItem {
+  margin-bottom: 10px;
+  color: gray;
+  cursor: pointer;
+}
+
+.footerRight {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fInput {
+  padding: 5px;
+}
+
+.fButton {
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+
+.fIcons{
+  display: flex;
+}
+
+.fIcon{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.copyright{
+  font-weight: 300;
+  font-size: 14px;
+} */
+
+
+/* 
+@media screen and (max-width:480px) {
+  nav{
+    padding: 20px;
+  }
+
+  .search{
+    display: none;
+  }
+
+  .navBottom{
+    flex-wrap: wrap;
+  }
+
+  .menuItem{
+    margin: 20px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .slider{
+    clip-path: none;
+  }
+
+  .sliderImg{
+    width: 90%;
+  }
+
+  .sliderBg{
+    width: 100%;
+    height: 100%;
+  }
+
+  .sliderTitle{
+    display: none;
+  }
+
+  .sliderPrice{
+    top: unset;
+    bottom: -50;
+    left: 0;
+    background-color: lightgrey;
+  }
+
+  .buyButton{
+    right: 0;
+    top: 0;
+  }
+
+  .features{
+    flex-direction: column;
+  }
+
+  .product{
+    clip-path: none ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .productImg{
+    width: 80%;
+  } 
+
+  .productDetails{
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: 0;
+  }
+
+  .productTitle{
+    font-size: 50px;
+    margin: 0;
+  }
+
+  .gallery{
+    display: none;
+  }
+
+  .newSeason{
+    flex-direction: column;
+  }
+
+  .nsItem:nth-child(2){
+    padding: 50px;
+  }
+
+  footer{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerLeft{
+    padding: 20px;
+    width: 90%;
+  }
+
+  .footerRight{
+    padding: 20px;
+    width: 90%;
+    align-items: center;
+    background-color: whitesmoke;
+  }
+
+  .payment{
+    width: 90%;
+    padding: 20px;
+  }
+} */
+
+
+
+
